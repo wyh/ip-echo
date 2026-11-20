@@ -1,0 +1,16 @@
+[Unit]
+Description=Minimal Client IP Echo Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/ip-echo
+Environment=ADDR=127.0.0.1:18080
+Restart=always
+RestartSec=2
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
